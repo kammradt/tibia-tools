@@ -1,3 +1,3 @@
 # Welcome ;) 
 
-> I'll write details later
+> I'll write project details later 
