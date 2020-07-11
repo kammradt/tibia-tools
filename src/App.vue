@@ -17,7 +17,7 @@
           <div>
             <el-form label-width="105px">
               <el-row v-for="coin in coins" :key="coin.name" justify="left" type="flex">
-                <el-avatar shape="square" size="large" />
+                <el-avatar :src="coin.src" shape="square" size="large" />
                 <el-form-item :label="coin.name">
                   <el-input :placeholder="`${coin.name} quantity`" v-model="coin.qtd" @change="stacksToGold"/>
                 </el-form-item>
@@ -58,11 +58,11 @@
         '!withdraw'
       ],
       coins: [
-        {name: 'Red Coin', value: 100000000, qtd: 0},
-        {name: 'Green Coin', value: 1000000, qtd: 0},
-        {name: 'Crystal Coin', value: 10000, qtd: 0},
-        {name: 'Platinum Coin', value: 100, qtd: 0},
-        {name: 'Gold Coin', value: 1, qtd: 0}
+        {name: 'Red Coin', value: 100000000, qtd: 0, src: 'https://www.tibiawiki.com.br/images/9/99/Assassin_Star.gif'},
+        {name: 'Green Coin', value: 1000000, qtd: 0, src: 'https://www.tibiawiki.com.br/images/d/d0/Green_Light.gif'},
+        {name: 'Crystal Coin', value: 10000, qtd: 0, src: 'https://www.tibiawiki.com.br/images/5/55/Crystal_Coin.gif'},
+        {name: 'Platinum Coin', value: 100, qtd: 0, src: 'https://www.tibiawiki.com.br/images/f/f8/Platinum_Coin.gif'},
+        {name: 'Gold Coin', value: 1, qtd: 0, src: 'https://www.tibiawiki.com.br/images/b/b0/Gold_Coin.gif'}
       ]
     }),
     methods: {
