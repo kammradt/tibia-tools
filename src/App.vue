@@ -37,7 +37,7 @@
               trigger="hover"
               content="Click to copy to clipboard">
               <el-button slot="reference" v-clipboard="() => `${command} ${oldValue}`"
-                         v-text="`${command} ${oldValue}`"/>
+                        v-text="`${command} ${oldValue}`"/>
             </el-popover>
           </el-row>
         </el-card>
@@ -65,6 +65,9 @@
         {name: 'Gold Coin', value: 1, qtd: 0, src: 'https://www.tibiawiki.com.br/images/b/b0/Gold_Coin.gif'}
       ]
     }),
+    mounted() {
+      console.log(require('@/assets/itens.json'));
+    },
     methods: {
       goldToStacks() {
         this.oldValue = this.value
