@@ -1,7 +1,7 @@
 <h1  align="center">Welcome to Let's Tibia Tools :v: </h1>
 
 <div  align="center">
-	<img  src="./images/tibia_tools.gif"  alt="SOME_LOGO"  width=500" />
+	<img  src="./images/tibia_tools.gif"  alt="Tibia Tools Logo"  width=500" />
 </div>
 
 <div  align="center">
