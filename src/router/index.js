@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import CoinsConverterVuetify from "../views/CoinsConverter";
+import CoinsConverterView from "../modules/coins-converter/CoinsConverterView";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'CoinsConverter',
-    component: CoinsConverterVuetify
+    name: 'CoinsConverterView',
+    component: CoinsConverterView
   },
 ]
 
