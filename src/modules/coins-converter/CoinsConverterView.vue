@@ -13,10 +13,10 @@
                     v-on="on"
                     color="grey"
                     class="pl-2"
-                  >mdi-help-circle
-                  </v-icon>
+                    v-text="'mdi-help-circle'"
+                  />
                 </template>
-                <span>Type how much money you have that we convert it into coins stacks!</span>
+                <span v-text="'Type how much money you have that we convert it into coins stacks!'"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>
@@ -37,26 +37,23 @@
                     v-on="on"
                     color="grey"
                     class="pl-2"
-                  >mdi-help-circle
-                  </v-icon>
+                    v-text="'mdi-help-circle'"
+                  />
                 </template>
-                <span>Fill your coins stacks quantity and we convert it to the absolute total value!</span>
+                <span v-text="'Fill your coins stacks quantity and we convert it to the absolute total value!'"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>
             <v-card-text class="mt-3">
               <v-row no-gutters
-                     style="border: red 1px"
                      v-for="coin in coins"
                      :key="coin.name">
                 <v-col cols="2">
                   <v-avatar size="48" rounded="2" color="grey lighten-3">
-                    <img :src="coin.src">
+                    <img :src="coin.src" :alt="coin.name">
                   </v-avatar>
                 </v-col>
-                <v-col cols="4" class="pb-6" align-self="center">
-                  {{coin.name}}
-                </v-col>
+                <v-col cols="4" class="pb-6" align-self="center" v-text="coin.name"/>
                 <v-col cols="6">
                   <v-text-field :placeholder="`${coin.name} quantity`" type="number" v-model="coin.qtd" dense outlined
                                 @change="stacksToGold"/>
@@ -76,10 +73,10 @@
                     v-on="on"
                     color="grey"
                     class="pl-2"
-                  >mdi-help-circle
-                  </v-icon>
+                    v-text="'mdi-help-circle'"
+                  />
                 </template>
-                <span>Here we have some generated commands based on your results!</span>
+                <span v-text="'Here we have some generated commands based on your results!'"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>
@@ -97,7 +94,7 @@
                         block
                       />
                     </template>
-                    <span>Click to copy to clipboard!</span>
+                    <span v-text="'Click to copy to clipboard!'"/>
                   </v-tooltip>
                 </v-col>
               </v-row>
@@ -111,7 +108,7 @@
 
 <script>
   export default {
-    name: "CoinsConverter",
+    name: "CoinsConverterView",
     data: () => ({
       value: 0,
       oldValue: 0,
@@ -133,26 +130,22 @@
         return this.oldValue !== 0
       }
     },
-    mounted() {
-      console.log(require('@/assets/itens.json'));
-    },
     methods: {
       goldToStacks() {
-        this.oldValue = Number(this.value)
+        this.updateOldValue()
         this.value = Math.abs(this.value)
         this.coins.forEach(coin => {
-          coin.qtd = Math.max(0, coin.qtd);
-          coin.qtd = Math.floor(this.value / coin.value)
+          coin.qtd = Math.floor(Math.abs(this.value) / coin.value)
           this.value -= coin.qtd * coin.value
         })
       },
       stacksToGold() {
-        this.value = this.coins.reduce((acc, stack) => {
-          stack.qtd = Math.max(0, stack.qtd);
-          return acc += stack.value * stack.qtd
-        }, 0)
-        this.oldValue = Number(this.value)
+        this.value = this.coins.reduce((acc, stack) => acc += stack.value * Math.abs(stack.qtd), 0)
+        this.updateOldValue()
       },
+      updateOldValue() {
+        this.oldValue = Number(this.value)
+      }
     },
   }
 </script>
