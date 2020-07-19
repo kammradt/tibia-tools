@@ -1,14 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from '../App.vue'
+import CoinsConverterView from "../modules/coins-converter/CoinsConverterView";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: App
+    name: 'CoinsConverterView',
+    component: CoinsConverterView
   },
 ]
 
