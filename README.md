@@ -42,31 +42,79 @@ This is a unknown place for me that sounds interesting. I really wanted some pub
 ### Features :tada:
 > :construction: In progress
 
--  [ ]  **Users**
-    -  [ ] Account creation
+-  **Users**
+    - Account creation
 
--  [ ]  **Features**
-    -  [ ] Coins Converter
-    > Money is measured using coins and they have multiple types with different values. Manipulating and converting them will be useful.
-     
-    -  [ ] Damage Resume
+-  **Features**
+    - #### Coins Converter
+    > Money is measured using coins. They have multiple types with different values. Manipulating and converting them will be useful.
+        
+    <details>
+     <summary>Changelog</summary>
+     <p><b>0.1</b> - Just a simple single Vue components that does everything alone and without any API.</p>
+    </details>
+
+    ---
+
+    - #### Damage Resume
     > Character inflict damage through attacks, so having some detailed information from logs about it would be cool. (Mean, Max, Min, etc)
+
+    <details>
+     <summary>Changelog</summary>
+     <p>:construction:</p>
+    </details>
+
+    ---
      
-    -  [ ] Mining Resume
+    - #### Mining Resume
     > There is a mining system that allow players to gather resources. Statistics and a projection of results would be cool to understand how is the progress going.
+
+    <details>
+     <summary>Changelog</summary>
+     <p>:construction:</p>
+    </details>
+
+    ---
     
-    -  [ ] Task Projection
+    - #### Task Projection
     > Players can complete tasks by killing monsters. Based on logs, we can estimate the time necessary to complete a certain task.
 
-    -  [ ] Backpack Information
+    <details>
+     <summary>Changelog</summary>
+     <p>:construction:</p>
+    </details>
+
+    ---
+
+    - #### Backpack Information
     > Backpacks are used to carry itens, and there is a common practice to have multiple backpacks inside each other. Would be nice to know how much backpacks and slots you have based on a single one and it's weight.
 
-    -  [ ] Loot Manager
+    <details>
+     <summary>Changelog</summary>
+     <p>:construction:</p>
+    </details>
+
+    ---
+
+    - #### Loot Manager
     > Monsters can have loot inside it when killed. Based on IDs, we can easily create structured looting lists for a better organization. (Based on [this](http://www.zottesso.com.br/tibia))  
 
-    -  [ ] Market Notifications
+    <details>
+     <summary>Changelog</summary>
+     <p>:construction:</p>
+    </details>
+
+    ---
+
+    - #### Market Notifications
     > There is a market where player can sell and buy itens. Based on a wishlist, we can scrape this data from a website and send notifications to users that want a specific item.
     
+    <details>
+     <summary>Changelog</summary>
+     <p>:construction:</p>
+    </details>
+
+    ---
 
 ## Roadmap :bar_chart:  
 
