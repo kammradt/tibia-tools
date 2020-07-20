@@ -5,7 +5,7 @@
         <v-col>
           <v-card>
             <v-card-title>
-              Absolute value to Coins stacks
+              {{$t('cc.value-to-stacks.title')}}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon
@@ -16,7 +16,7 @@
                     v-text="'mdi-help-circle'"
                   />
                 </template>
-                <span v-text="'Type how much money you have that we convert it into coins stacks!'"/>
+                <span v-text="$t('cc.value-to-stacks.tooltip')"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>
@@ -29,7 +29,7 @@
         <v-col>
           <v-card>
             <v-card-title>
-              Coins stacks to absolute value
+              {{$t('cc.stacks-to-value.title')}}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon
@@ -40,7 +40,7 @@
                     v-text="'mdi-help-circle'"
                   />
                 </template>
-                <span v-text="'Fill your coins stacks quantity and we convert it to the absolute total value!'"/>
+                <span v-text="$t('cc.stacks-to-value.tooltip')"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>
@@ -49,9 +49,15 @@
                      v-for="coin in coins"
                      :key="coin.name">
                 <v-col cols="2">
-                  <v-avatar size="48" rounded="2" color="grey lighten-3">
-                    <img :src="coin.src" :alt="coin.name">
-                  </v-avatar>
+                  <v-tooltip left>
+                    <template v-slot:activator="{ on }">
+                      <v-avatar v-on="on" size="48" rounded="2" color="grey lighten-3">
+                        <img :src="coin.src" :alt="coin.name">
+                      </v-avatar>
+                    </template>
+                    <span v-text="coin.value"/>
+                  </v-tooltip>
+
                 </v-col>
                 <v-col cols="4" class="pb-6" align-self="center" v-text="coin.name"/>
                 <v-col cols="6">
@@ -65,7 +71,7 @@
         <v-col v-if="shouldShowCommands">
           <v-card>
             <v-card-title>
-              Generated commands
+              {{$t('cc.commands.title')}}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon
@@ -76,7 +82,7 @@
                     v-text="'mdi-help-circle'"
                   />
                 </template>
-                <span v-text="'Here we have some generated commands based on your results!'"/>
+                <span v-text="$t('cc.commands.tooltip')"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>
@@ -94,7 +100,7 @@
                         block
                       />
                     </template>
-                    <span v-text="'Click to copy to clipboard!'"/>
+                    <span v-text="$t('common.copy-to-clipboard')"/>
                   </v-tooltip>
                 </v-col>
               </v-row>
