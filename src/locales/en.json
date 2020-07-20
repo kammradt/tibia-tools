@@ -1,0 +1,19 @@
+{
+  "common": {
+    "copy-to-clipboard": "Click to copy to clipboard!"
+  },
+  "cc": {
+    "value-to-stacks": {
+      "title": "Absolute value to Coins stacks",
+      "tooltip": "Type how much money you have that we convert it into coins stacks!"
+    },
+    "stacks-to-value": {
+      "title": "Coins stacks to Absolute value",
+      "tooltip": "Type your coins stacks quantity and we convert it to the absolute value!"
+    },
+    "commands" : {
+      "title": "Generated commands",
+      "tooltip": "Here we have some generated commands based on your results!"
+    }
+  }
+}
