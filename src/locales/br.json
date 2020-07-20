@@ -1,0 +1,19 @@
+{
+  "common": {
+    "copy-to-clipboard": "Clique para copiar!"
+  },
+  "cc": {
+    "value-to-stacks": {
+      "title": "Valor para stacks",
+      "tooltip": "Digite quanto você tem para converter para stacks!"
+    },
+    "stacks-to-value": {
+      "title": "Stacks para valor",
+      "tooltip": "Digite seus stacks para converter para o valor!"
+    },
+    "commands" : {
+      "title": "Comandos gerados",
+      "tooltip": "Esses são alguns comandos gerados baseados nos seus resultados!"
+    }
+  }
+}
