@@ -20,5 +20,13 @@
       "title": "Comandos gerados",
       "tooltip": "Esses são alguns comandos gerados baseados nos seus resultados!"
     }
+  },
+  "mr": {
+    "title": "Estatísticas de Mineração ⛏️",
+    "description": "Existe um sistema de mineração que permite aos jogadores coletar recursos. Estatísticas e uma projeção de resultados seriam legais para entender como está o progresso.",
+    "log-to-statistics": {
+      "title": "Chat log para estatísticas",
+      "tooltip": "Copie e cole aqui seu log do chat de mineração e ele será convertido em estatísticas!"
+    }
   }
 }

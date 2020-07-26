@@ -20,5 +20,13 @@
       "title": "Generated commands",
       "tooltip": "Here we have some generated commands based on your results!"
     }
+  },
+  "mr": {
+    "title": "Mining Statistics ⛏️",
+    "description": "There is a mining system that allow players to gather resources. Statistics and a projection of results would be cool to understand how is the progress going.",
+    "log-to-statistics": {
+      "title": "Chat log to statistics",
+      "tooltip": "Copy and paste here your mining chat log and we will convert into statistics!"
+    }
   }
 }
