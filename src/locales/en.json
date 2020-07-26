@@ -1,8 +1,13 @@
 {
   "common": {
-    "copy-to-clipboard": "Click to copy to clipboard!"
+    "copy-to-clipboard": "Click to copy to clipboard!",
+    "home": "Home",
+    "settings": "Settings",
+    "search": "Search"
   },
   "cc": {
+    "title": "Coins Converter  \uD83D\uDCB8",
+    "description": "Money is measured using coins. They have multiple types with different values. Manipulating and converting them will be useful. Here you can perform multiple operations and conversions.",
     "value-to-stacks": {
       "title": "Absolute value to Coins stacks",
       "tooltip": "Type how much money you have that we convert it into coins stacks!"

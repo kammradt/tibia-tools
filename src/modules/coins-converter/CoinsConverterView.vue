@@ -3,7 +3,7 @@
     <v-row align="start" justify="center">
       <v-col cols="9" sm="8">
         <v-col>
-          <v-card>
+          <v-card outlined>
             <v-card-title>
               {{$t('cc.value-to-stacks.title')}}
               <v-tooltip right>
@@ -27,7 +27,7 @@
           </v-card>
         </v-col>
         <v-col>
-          <v-card>
+          <v-card outlined>
             <v-card-title>
               {{$t('cc.stacks-to-value.title')}}
               <v-tooltip right>
@@ -114,7 +114,7 @@
 
 <script>
   export default {
-    name: "CoinsConverterView",
+    name: 'CoinsConverterView',
     data: () => ({
       value: 0,
       oldValue: 0,
