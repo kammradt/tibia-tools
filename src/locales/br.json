@@ -1,8 +1,13 @@
 {
   "common": {
-    "copy-to-clipboard": "Clique para copiar!"
+    "copy-to-clipboard": "Clique para copiar!",
+    "home": "Início",
+    "settings": "Configurações",
+    "search": "Pesquisar"
   },
   "cc": {
+    "title": "Conversor de Moedas  \uD83D\uDCB8",
+    "description": "O dinheiro é medido usando moedas. Elas têm vários tipos com valores diferentes. Manipular e convertê-los será útil. Aqui você pode executar várias operações e conversões.",
     "value-to-stacks": {
       "title": "Valor para stacks",
       "tooltip": "Digite quanto você tem para converter para stacks!"
