@@ -81,7 +81,12 @@
             link: 'CoinsConverterView',
             text: this.$i18n.t('cc.title'),
             description: this.$i18n.t('cc.description')
-          }
+          },
+          {
+            link: 'MiningStatisticsView',
+            text: this.$i18n.t('mr.title'),
+            description: this.$i18n.t('mr.description')
+          },
         ]
       }
     },
