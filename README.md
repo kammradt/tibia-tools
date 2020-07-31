@@ -51,7 +51,7 @@ This is a unknown place for me that sounds interesting. I really wanted some pub
         
     <details>
      <summary>Changelog</summary>
-     <p><b>0.1</b> - Just a simple single Vue components that does everything alone and without any API.</p>
+     <p><b>0.1</b> - Just a simple single Vue component that does everything alone and without any API.</p>
     </details>
 
     ---
@@ -71,7 +71,7 @@ This is a unknown place for me that sounds interesting. I really wanted some pub
 
     <details>
      <summary>Changelog</summary>
-     <p>:construction:</p>
+     <p><b>0.1</b> - Just a simple single Vue component that does everything alone and without any API. I also want to support custom date ranges. (currently just 1 hour and 24 hours)</p>
     </details>
 
     ---
