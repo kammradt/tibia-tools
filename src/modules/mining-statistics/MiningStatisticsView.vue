@@ -21,7 +21,8 @@
             </v-card-title>
             <v-divider/>
             <v-card-text class="mt-3">
-              <v-textarea dense outlined :placeholder="logPlaceholder" v-model="logPlaceholder" @change="logToStatistics"/>
+              <v-textarea dense outlined :placeholder="logPlaceholder" v-model="log"
+                          @change="logToStatistics"/>
             </v-card-text>
           </v-card>
         </v-col>
@@ -43,24 +44,24 @@
               </v-tooltip>
             </v-card-title>
             <v-divider/>
-            <v-card-text class="mt-3">
-              <v-row no-gutters v-for="coin in statistics" :key="coin.name">
+            <v-card-text >
+              <v-row no-gutters v-for="ore in oresInfo" :key="ore.name">
                 <v-col cols="2">
                   <v-tooltip left>
                     <template v-slot:activator="{ on }">
                       <v-avatar v-on="on" size="48" rounded="2" color="grey lighten-3">
-                        <img :src="'https://www.tibiawiki.com.br/images/2/23/Small_Enchanted_Amethyst.gif'" :alt="coin.name">
+                        <img :src="ore.src" :alt="ore.name">
                       </v-avatar>
                     </template>
-                    <span v-text="coin.name"/>
+                    <span v-text="ore.name"/>
                   </v-tooltip>
                 </v-col>
-                <v-col cols="4" class="pb-6" align-self="center" v-text="coin.name"/>
+                <v-col cols="4" class="pb-6" align-self="center" v-text="ore.name"/>
                 <v-col cols="3">
-                  <span v-text="`${coin.perHour} per hour`" />
+                  <span v-text="`${to2(ore.perHour)} per hour`"/>
                 </v-col>
                 <v-col cols="3">
-                  <span v-text="`${coin.perHour * 24} per day`" />
+                  <span v-text="`${to2(ore.perHour * 24)} per day`"/>
                 </v-col>
               </v-row>
             </v-card-text>
@@ -73,121 +74,27 @@
 
 <script>
   import moment from "moment";
+  import ores from '@/assets/ores.json'
+  import ph from './placeholder-helper'
 
   export default {
     name: 'MiningStatisticsView',
     data: () => ({
+      oresInfo: [...ores],
       log: '',
-      logPlaceholder: `15:35 [MINING] You have found a small enchanted ruby.
-15:35 [MINING] You have found a small enchanted sapphire.
-15:36 [MINING] You have found a small sapphire.
-15:37 [MINING] You have found a small amethyst.
-15:37 [MINING] You have found a small enchanted sapphire.
-15:37 [MINING] You have found a small enchanted sapphire.
-15:38 [MINING] You have found a small enchanted sapphire.
-15:38 [MINING] You have found a small amethyst.
-15:38 [MINING] You have found a small ruby.
-15:38 [MINING] You have found a small sapphire.
-15:39 [MINING] You have found a small ruby.
-15:39 [MINING] You have found a small enchanted sapphire.
-15:39 [MINING] You have found a small enchanted ruby.
-15:40 [MINING] You have found a small enchanted emerald.
-15:41 [MINING] You have found a small enchanted sapphire.
-15:42 [MINING] You have found a small enchanted sapphire.
-15:43 [MINING] You have found a small ruby.
-15:43 [MINING] You have found a white pearl.
-15:44 [MINING] You have found a small enchanted amethyst.
-15:46 [MINING] You have found a small enchanted amethyst.
-15:46 [MINING] You have found a small enchanted emerald.
-15:47 [MINING] You have found a small ruby.
-15:47 [MINING] You have found a small enchanted ruby.
-15:47 [MINING] You have found a small ruby.
-15:47 [MINING] You have found a Pepita de Ouro.
-15:49 [MINING] You have found a small enchanted emerald.
-15:49 [MINING] You have found a small enchanted ruby.
-15:49 [MINING] You have found a small enchanted sapphire.
-15:50 [MINING] You have found a small enchanted sapphire.
-15:50 [MINING] You have found a small ruby.
-15:50 [MINING] You have found a small emerald.
-15:50 [MINING] You have found a white pearl.
-15:51 [MINING] You have found a small enchanted sapphire.
-15:51 [MINING] You have found a small enchanted sapphire.
-15:52 [MINING] You have found a small emerald.
-15:52 [MINING] You have found a small enchanted ruby.
-15:53 [MINING] You have found a small diamond.
-15:53 [MINING] You have found a small sapphire.
-15:53 [MINING] You have found a small enchanted emerald.
-15:53 [MINING] You have found a small emerald.
-15:54 [MINING] You have found a small enchanted sapphire.
-15:56 [MINING] You have found a small sapphire.
-15:56 [MINING] You have found a small emerald.
-15:56 [MINING] You have found a Pepita de Ouro.
-15:56 [MINING] You have found a small enchanted ruby.
-15:57 [MINING] You have found a small enchanted emerald.
-15:57 [MINING] You have found a small enchanted sapphire.
-15:57 [MINING] You have found a small enchanted sapphire.
-15:57 [MINING] You have found a small enchanted ruby.
-15:58 [MINING] You have found a small enchanted emerald.
-15:58 [MINING] You have found a small sapphire.
-15:59 [MINING] You have found a small emerald.
-16:00 [MINING] You have found a small enchanted ruby.
-16:00 [MINING] You have found a small ruby.
-16:00 [MINING] You have found a small enchanted sapphire.
-16:01 [MINING] You have found a white pearl.
-16:01 [MINING] You have found a small enchanted amethyst.
-16:01 [MINING] You have found a small enchanted amethyst.
-16:01 [MINING] You have found a small enchanted sapphire.
-16:01 [MINING] You have found a small enchanted emerald.
-16:01 [MINING] You have found a white pearl.
-16:01 [MINING] You have found a white pearl.
-16:03 [MINING] You have found a small enchanted sapphire.
-16:03 [MINING] You have found a white pearl.
-16:03 [MINING] You have found a small emerald.
-16:03 [MINING] You have found a small sapphire.
-16:04 [MINING] You have found a Pepita de Ouro.
-16:04 [MINING] You have found a small sapphire.
-16:06 [MINING] You have found a small ruby.
-16:06 [MINING] You have found a white pearl.
-16:06 [MINING] You have found a small enchanted sapphire.
-16:08 [MINING] You have found a small enchanted sapphire.
-16:08 [MINING] You have found a white pearl.
-16:08 [MINING] You have found a small enchanted sapphire.
-16:08 [MINING] You have found a small amethyst.
-16:09 [MINING] You have found a small emerald.
-16:09 [MINING] You have found a white pearl.
-16:10 [MINING] You have found a small ruby.
-16:10 [MINING] You have found a small emerald.
-16:11 [MINING] You have found a small enchanted sapphire.
-16:11 [MINING] You have found a small enchanted emerald.
-16:11 [MINING] You have found a small enchanted sapphire.
-16:13 [MINING] You have found a Pepita de Ouro.
-16:14 [MINING] You have found a small emerald.
-16:14 [MINING] You have found a Pepita de Ouro.
-16:16 [MINING] You have found a small enchanted sapphire.
-16:16 [MINING] You have found a small emerald.
-16:16 [MINING] You have found a Pepita de Ouro.
-16:17 [MINING] You have found a small enchanted sapphire.
-16:18 [MINING] You have found a small enchanted ruby.
-16:19 [MINING] You have found a small sapphire.
-16:20 [MINING] You have found a small enchanted sapphire.
-16:20 [MINING] You have found a small enchanted amethyst.
-16:20 [MINING] You have found a small diamond.
-16:20 [MINING] You have found a small enchanted ruby.
-16:20 [MINING] You have found a small enchanted emerald.
-16:20 [MINING] You have found a small sapphire.
-16:21 [MINING] You have found a small diamond.
-16:21 [MINING] You have found a small enchanted ruby.
-16:21 [MINING] You have found a small enchanted sapphire.
-`,
+      logPlaceholder: ph(),
       statistics: {}
     }),
     methods: {
       logToStatistics() {
-        const ores = this.filterOres(this.logPlaceholder)
-        const oreStatistics = this.oreListToStatistics(ores)
-        const duration = this.getMiningDurationInHours(this.logPlaceholder)
-        this.setQuantityPerHour(oreStatistics, duration)
-        this.statistics = oreStatistics
+        this.resetInformation()
+        this.oreListToStatistics(this.filterOres(this.log))
+        this.setQuantityPerHour(this.getMiningDurationInHours(this.log))
+      },
+      resetInformation() {
+        if (this.oresInfo.some(ore => ore.quantity !== 0)) {
+          this.oresInfo = this.oresInfo.map(ore => ({...ore, quantity: 0, perHour: 0}))
+        }
       },
       filterOres(logText) {
         return this.toList(logText)
@@ -207,28 +114,27 @@
         return logLine.slice(logLine.indexOf(SLICE_AT) + SLICE_AT.length)
       },
       removeLastCharacter(text) {
-        return text.slice(0, -1).trim();
+        return text.trim().slice(0, -1);
       },
-      setQuantityPerHour(oreWithQuantity, duration) {
-        for (let ore of Object.keys(oreWithQuantity)) {
-          oreWithQuantity[ore].perHour = (oreWithQuantity[ore].quantity / duration).toFixed(2)
-        }
-      },
-      oreListToStatistics(logList) {
-        const info = {}
-        logList.forEach(ore => {
-          if (info[ore]) {
-            info[ore].quantity += 1
-          } else {
-            info[ore] = {quantity: 1, name: ore}
+      setQuantityPerHour(duration) {
+        this.oresInfo.forEach(ore => {
+          if (ore.quantity) {
+            ore.perHour = (ore.quantity / duration)
           }
         })
-        return info
+      },
+      oreListToStatistics(logList) {
+        logList.forEach(ore => this.findOreByName(ore).quantity += 1)
+      },
+      findOreByName(name) {
+        return this.oresInfo.find(ore => ore.name.toLowerCase() === name.toLowerCase())
       },
       getMiningDurationInHours(logText) {
         let timeList = this.toList(logText)
             .filter(this.validMiningLog)
             .map(this.getTimeFromLogLine)
+
+        if (!timeList.length) return 0
 
         const start = timeList[0]
         const end = timeList[timeList.length - 1]
@@ -246,6 +152,9 @@
         const SLICE_AT = '[MINING]'
         return logLine.slice(0, logLine.indexOf(SLICE_AT)).trim()
       },
-    }
+      to2(value) {
+        return value.toFixed(2)
+      }
+    },
   }
 </script>
