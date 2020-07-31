@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../modules/home/HomeView'
 import CoinsConverterView from "../modules/coins-converter/CoinsConverterView";
 import SettingsView from "../modules/home/SettingsView";
+import MiningStatisticsView from "../modules/mining-statistics/MiningStatisticsView";
 
 Vue.use(VueRouter)
 
@@ -16,6 +17,11 @@ const routes = [
         path: 'coins-converter',
         name: 'CoinsConverterView',
         component: CoinsConverterView
+      },
+      {
+        path: 'mining-statistics',
+        name: 'MiningStatisticsView',
+        component: MiningStatisticsView
       },
       {
         path: 'settings',
