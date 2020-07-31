@@ -29,7 +29,7 @@
         <v-col>
           <v-card outlined>
             <v-card-title>
-              {{$t('cc.stacks-to-value.title')}}
+              {{$t('mr.resume.title')}}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon
@@ -40,7 +40,7 @@
                     v-text="'mdi-help-circle'"
                   />
                 </template>
-                <span v-text="$t('cc.stacks-to-value.tooltip')"/>
+                <span v-text="$t('mr.resume.tooltip')"/>
               </v-tooltip>
             </v-card-title>
             <v-divider/>

@@ -27,6 +27,10 @@
     "log-to-statistics": {
       "title": "Chat log para estatísticas",
       "tooltip": "Copie e cole aqui seu log do chat de mineração e ele será convertido em estatísticas!"
+    },
+    "resume": {
+      "title": "Estatísticas e Projeções",
+      "tooltip": "Baseado nos valores inseridos, conseguimos extrair algumas informações e efetuar projeções!"
     }
   }
 }
