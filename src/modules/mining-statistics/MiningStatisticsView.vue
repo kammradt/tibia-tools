@@ -21,10 +21,50 @@
             </v-card-title>
             <v-divider/>
             <v-card-text class="mt-3">
-              <v-textarea dense outlined :placeholder="logPlaceholder" v-model="log" @change="logToStatistics"/>
+              <v-textarea dense outlined :placeholder="logPlaceholder" v-model="logPlaceholder" @change="logToStatistics"/>
             </v-card-text>
           </v-card>
-          {{statistics}}
+        </v-col>
+        <v-col>
+          <v-card outlined>
+            <v-card-title>
+              {{$t('cc.stacks-to-value.title')}}
+              <v-tooltip right>
+                <template v-slot:activator="{ on }">
+                  <v-icon
+                    small
+                    v-on="on"
+                    color="grey"
+                    class="pl-2"
+                    v-text="'mdi-help-circle'"
+                  />
+                </template>
+                <span v-text="$t('cc.stacks-to-value.tooltip')"/>
+              </v-tooltip>
+            </v-card-title>
+            <v-divider/>
+            <v-card-text class="mt-3">
+              <v-row no-gutters v-for="coin in statistics" :key="coin.name">
+                <v-col cols="2">
+                  <v-tooltip left>
+                    <template v-slot:activator="{ on }">
+                      <v-avatar v-on="on" size="48" rounded="2" color="grey lighten-3">
+                        <img :src="'https://www.tibiawiki.com.br/images/2/23/Small_Enchanted_Amethyst.gif'" :alt="coin.name">
+                      </v-avatar>
+                    </template>
+                    <span v-text="coin.name"/>
+                  </v-tooltip>
+                </v-col>
+                <v-col cols="4" class="pb-6" align-self="center" v-text="coin.name"/>
+                <v-col cols="3">
+                  <span v-text="`${coin.perHour} per hour`" />
+                </v-col>
+                <v-col cols="3">
+                  <span v-text="`${coin.perHour * 24} per day`" />
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </v-card>
         </v-col>
       </v-col>
     </v-row>
@@ -143,9 +183,9 @@
     }),
     methods: {
       logToStatistics() {
-        const ores = this.filterOres(this.log)
+        const ores = this.filterOres(this.logPlaceholder)
         const oreStatistics = this.oreListToStatistics(ores)
-        const duration = this.getMiningDurationInHours(this.log)
+        const duration = this.getMiningDurationInHours(this.logPlaceholder)
         this.setQuantityPerHour(oreStatistics, duration)
         this.statistics = oreStatistics
       },
@@ -180,7 +220,7 @@
           if (info[ore]) {
             info[ore].quantity += 1
           } else {
-            info[ore] = {quantity: 1}
+            info[ore] = {quantity: 1, name: ore}
           }
         })
         return info
