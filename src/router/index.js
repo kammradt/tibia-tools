@@ -4,6 +4,7 @@ import HomeView from '../modules/home/HomeView'
 import CoinsConverterView from "../modules/coins-converter/CoinsConverterView";
 import SettingsView from "../modules/home/SettingsView";
 import MiningStatisticsView from "../modules/mining-statistics/MiningStatisticsView";
+import DamageStatisticsView from "../modules/damage-statistics/DamageStatisticsView";
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
         path: 'mining-statistics',
         name: 'MiningStatisticsView',
         component: MiningStatisticsView
+      },
+      {
+        path: 'damage-statistics',
+        name: 'DamageStatisticsView',
+        component: DamageStatisticsView
       },
       {
         path: 'settings',

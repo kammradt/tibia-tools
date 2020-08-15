@@ -16,7 +16,7 @@
       "title": "Coins stacks to Absolute value",
       "tooltip": "Type your coins stacks quantity and we convert it to the absolute value!"
     },
-    "commands" : {
+    "commands": {
       "title": "Generated commands",
       "tooltip": "Here we have some generated commands based on your results!"
     }
@@ -25,12 +25,28 @@
     "title": "Mining Statistics ⛏️",
     "description": "There is a mining system that allow players to gather resources. Statistics and a projection of results would be cool to understand how is the progress going.",
     "log-to-statistics": {
-      "title": "Chat log to statistics",
+      "title": "Mining Chat log to statistics",
       "tooltip": "Copy and paste here your mining chat log and we will convert into statistics!"
     },
     "resume": {
       "title": "Statistics and Projections",
       "tooltip": "Based on your values, we can extract information and project some approximations!"
+    }
+  },
+  "ds": {
+    "title": "Combat Statistics ⚔️",
+    "description": "Character inflict damage through attacks, so having some detailed information from logs about it would be cool. (Mean, Max, Min, etc)",
+    "damage" :{
+      "dealt": "Damage Dealt",
+      "received": "Damage Receveid"
+    },
+    "log-to-statistics": {
+      "title": "Battle Chat log to statistics",
+      "tooltip": "Copy and paste here your battle chat log and we will convert into statistics!"
+    },
+    "resume": {
+      "title": "Statistics",
+      "tooltip": "Based on your attacks, we can extract information and project some approximations!"
     }
   }
 }
