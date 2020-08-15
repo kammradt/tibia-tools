@@ -87,6 +87,11 @@
             text: this.$i18n.t('mr.title'),
             description: this.$i18n.t('mr.description')
           },
+          {
+            link: 'DamageStatisticsView',
+            text: this.$i18n.t('ds.title'),
+            description: this.$i18n.t('ds.description')
+          },
         ]
       }
     },
