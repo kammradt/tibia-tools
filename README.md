@@ -56,12 +56,12 @@ This is a unknown place for me that sounds interesting. I really wanted some pub
 
     ---
 
-    - #### Damage Resume
+    - #### Combat Resume
     > Character inflict damage through attacks, so having some detailed information from logs about it would be cool. (Mean, Max, Min, etc)
 
     <details>
      <summary>Changelog</summary>
-     <p>:construction:</p>
+     <p><b>0.1</b> - Just a simple single Vue component that does everything alone and without any API. I also want to support displaying all related names (such as monsters, PVPs names, etc).</p>
     </details>
 
     ---
