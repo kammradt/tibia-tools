@@ -16,7 +16,7 @@
       "title": "Stacks para valor",
       "tooltip": "Digite seus stacks para converter para o valor!"
     },
-    "commands" : {
+    "commands": {
       "title": "Comandos gerados",
       "tooltip": "Esses são alguns comandos gerados baseados nos seus resultados!"
     }
@@ -31,6 +31,22 @@
     "resume": {
       "title": "Estatísticas e Projeções",
       "tooltip": "Baseado nos valores inseridos, conseguimos extrair algumas informações e efetuar projeções!"
+    }
+  },
+  "ds": {
+    "title": "Estatísticas de Combate ⚔️",
+    "description": "Personagens inflingem dano via ataques, então ter algumas informações a partir dos logs seria interessante(Média, Max, Min, etc)",
+    "damage": {
+      "dealt": "Damage Causado",
+      "received": "Damage Recebido"
+    },
+    "log-to-statistics": {
+      "title": "Battle Chat log para estatísticas",
+      "tooltip": "Copie e cole aqui seu log do chat de combate e ele será convertido em estatísticas!"
+    },
+    "resume": {
+      "title": "Estatísticas",
+      "tooltip": "Baseado em seus ataques, conseguimos extrair algumas informações e efetuar projeções!"
     }
   }
 }
