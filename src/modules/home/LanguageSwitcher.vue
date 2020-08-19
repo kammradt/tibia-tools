@@ -22,14 +22,13 @@ export default {
   name: "LanguageSwitcher",
   data: () => ({
     languages: [
-      {emoji: 'brrrr', lang: 'br'},
-      {emoji: 'ennn', lang: 'en'},
+      {emoji: '🇧🇷', lang: 'br'},
+      {emoji: '🇺🇸', lang: 'en'},
     ]
   }),
   methods: {
     setLanguageTo(language) {
       this.$i18n.locale = language
-      this.$root.$i18n.locale = language
     },
   }
 }
