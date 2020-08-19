@@ -7,12 +7,12 @@
     >
       <v-list>
         <template v-for="sideMenuLink in sideMenuLinks">
-          <v-list-item exact :key="sideMenuLink.text" :to="{name: sideMenuLink.link}">
+          <v-list-item exact :key="$t(sideMenuLink.text)" :to="{name: sideMenuLink.link}">
             <v-list-item-action>
               <v-icon v-text="sideMenuLink.icon"/>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title v-text="sideMenuLink.text"/>
+              <v-list-item-title v-text="$t(sideMenuLink.text)"/>
             </v-list-item-content>
           </v-list-item>
         </template>
@@ -38,6 +38,7 @@
         class="hidden-sm-and-down"
       ></v-text-field>
       <v-spacer/>
+      <LanguageSwitcher />
       <v-btn icon exact :to="{name: 'HomeView'}">
         <v-icon v-text="'mdi-apps'"/>
       </v-btn>
@@ -47,9 +48,9 @@
         <v-col cols="9" sm="8">
           <v-col v-for="feature in features" :key="feature.link">
             <v-card outlined :to="{name: feature.link}">
-              <v-card-title v-text="feature.text"/>
+              <v-card-title v-text="$t(feature.text)"/>
               <v-divider/>
-              <v-card-text v-text="feature.description" />
+              <v-card-text v-text="$t(feature.description)" />
             </v-card>
           </v-col>
         </v-col>
@@ -60,7 +61,9 @@
 </template>
 
 <script>
+  import LanguageSwitcher from "@/modules/home/LanguageSwitcher";
   export default {
+    components: {LanguageSwitcher},
     data() {
       return {
         drawer: false,
@@ -68,29 +71,29 @@
           {
             link: 'HomeView',
             icon: 'mdi-home',
-            text: this.$i18n.t('common.home')
+            text: 'common.home'
           },
           {
             link: 'SettingsView',
             icon: 'mdi-cog',
-            text: this.$i18n.t('common.settings')
+            text: 'common.settings'
           }
         ],
         features: [
           {
             link: 'CoinsConverterView',
-            text: this.$i18n.t('cc.title'),
-            description: this.$i18n.t('cc.description')
+            text: 'cc.title',
+            description: 'cc.description'
           },
           {
             link: 'MiningStatisticsView',
-            text: this.$i18n.t('mr.title'),
-            description: this.$i18n.t('mr.description')
+            text: 'mr.title',
+            description: 'mr.description'
           },
           {
             link: 'DamageStatisticsView',
-            text: this.$i18n.t('ds.title'),
-            description: this.$i18n.t('ds.description')
+            text: 'ds.title',
+            description: 'ds.description'
           },
         ]
       }
