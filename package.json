@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-ui": "^2.13.2",
     "moment": "^2.27.0",
     "v-clipboard": "^2.2.3",
     "vue": "^2.6.11",
