@@ -6,6 +6,7 @@
           <v-card outlined>
             <v-card-title>
               {{ $t('mr.log-to-statistics.title') }}
+              <v-spacer/>
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon

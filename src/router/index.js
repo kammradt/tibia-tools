@@ -5,6 +5,7 @@ import CoinsConverterView from "../modules/coins-converter/views/CoinsConverterV
 import SettingsView from "../modules/home/views/SettingsView";
 import MiningStatisticsView from "../modules/mining-statistics/views/MiningStatisticsView";
 import DamageStatisticsView from "../modules/damage-statistics/views/DamageStatisticsView";
+import ConsumablesTimerView from "@/modules/consumables-timer/views/ConsumablesTimerView";
 import App from "@/App";
 
 Vue.use(VueRouter)
@@ -38,11 +39,15 @@ const routes = [
                 component: DamageStatisticsView
             },
             {
+                path: 'consumables-timer',
+                name: 'ConsumablesTimerView',
+                component: ConsumablesTimerView
+            },
+            {
                 path: 'settings',
                 name: 'SettingsView',
                 component: SettingsView
             }
-
         ]
     }
 ]

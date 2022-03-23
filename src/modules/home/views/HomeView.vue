@@ -34,6 +34,12 @@ export default {
       ({
         features: [
           {
+            link: 'ConsumablesTimerView',
+            text: 'ct.title',
+            description: 'ct.description',
+            tags: [TAGS.ot, TAGS.global]
+          },
+          {
             link: 'DamageStatisticsView',
             text: 'ds.title',
             description: 'ds.description',

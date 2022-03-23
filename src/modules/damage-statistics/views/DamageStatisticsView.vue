@@ -6,6 +6,7 @@
           <v-card outlined>
             <v-card-title>
               {{ $t('ds.log-to-statistics.title') }}
+              <v-spacer/>
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon class="pl-2" color="grey" small v-on="on" v-text="'mdi-help-circle'"/>
