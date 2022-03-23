@@ -1,4 +1,4 @@
-export default () => `01:32 A Spatial Viserion Dragon loses 18551 hitpoints due to your attack.
+export const placeholder = `01:32 A Spatial Viserion Dragon loses 18551 hitpoints due to your attack.
 01:32 A Spatial Viserion Dragon loses 64811 hitpoints due to your attack.
 01:32 A Spatial Viserion Dragon loses 82033 hitpoints due to your attack.
 02:22 A Spatial Viserion Dragon loses 18522 hitpoints due to your attack.

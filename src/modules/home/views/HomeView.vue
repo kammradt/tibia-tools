@@ -11,7 +11,7 @@
             <v-divider/>
 
             <v-card-text>
-              <tag-category v-for="tag in feature.tags" :key="tag.text" :tag="tag"/>
+              <tag-category v-for="tag in feature.tags" :key="tag.text" :color="tag.color" :text="tag.text"/>
             </v-card-text>
           </v-card>
         </v-col>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import TagCategory from "@/modules/home/TagCategory";
+import TagCategory from "@/modules/home/componets/TagCategory";
 
 const TAGS = {
   ot: {text: 'OT', color: 'primary'},

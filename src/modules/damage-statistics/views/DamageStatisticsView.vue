@@ -87,23 +87,23 @@
 </template>
 
 <script>
-import ph from "./placeholder-helper";
+import {placeholder} from "../helpers/placeholder-helper";
 
 export default {
   name: "DamageStatisticsView",
   data() {
     return {
-      logPlaceholder: ph(),
+      logPlaceholder: placeholder,
       log: "",
       damageDealtRecords: [],
       damageReceivedRecords: [],
       statisticsOfDamageDealt: [
-        { name: "Mean", value: 0, calculate: this.calculateMean },
-        { name: "Min", value: 0, calculate: this.calculateMin },
-        { name: "Max", value: 0, calculate: this.calculateMax },
+        {name: "Mean", value: 0, calculate: this.calculateMean},
+        {name: "Min", value: 0, calculate: this.calculateMin},
+        {name: "Max", value: 0, calculate: this.calculateMax},
       ],
       statisticsOfDamageReceived: [
-        { name: "Mean", value: 0, calculate: this.calculateMean },
+        {name: "Mean", value: 0, calculate: this.calculateMean},
         { name: "Min", value: 0, calculate: this.calculateMin },
         { name: "Max", value: 0, calculate: this.calculateMax },
       ],

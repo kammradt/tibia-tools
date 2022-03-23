@@ -23,7 +23,7 @@
   </v-app-bar>
 </template>
 <script>
-import LanguageSwitcher from "@/modules/home/LanguageSwitcher";
+import LanguageSwitcher from "@/modules/common/components/LanguageSwitcher";
 
 export default {
   name: 'top-bar',

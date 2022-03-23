@@ -75,14 +75,14 @@
 <script>
 import moment from "moment";
 import ores from '@/assets/ores.json'
-import ph from './placeholder-helper'
+import {placeholder} from "@/modules/mining-statistics/helpers/placeholder-helper";
 
 export default {
   name: 'MiningStatisticsView',
   data: () => ({
     oresInfo: [...ores],
     log: '',
-    logPlaceholder: ph(),
+    logPlaceholder: placeholder,
     statistics: {}
   }),
   methods: {

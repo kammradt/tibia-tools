@@ -1,4 +1,4 @@
-export default () => `15:35 [MINING] You have found a small enchanted ruby.
+export const placeholder = `15:35 [MINING] You have found a small enchanted ruby.
 15:36 [MINING] You have found a small sapphire.
 15:37 [MINING] You have found a small amethyst.
 16:16 [MINING] You have found a Pepita de Ouro.
