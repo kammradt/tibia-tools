@@ -48,5 +48,13 @@
       "title": "Statistics",
       "tooltip": "Based on your attacks, we can extract information and project some approximations!"
     }
+  },
+  "ct": {
+    "title": "Consumables Timer 🍹 \uD83C\uDF54",
+    "description": "You can use consumables to increase your skills. Here you can calculate their remaining time.\n",
+    "create": {
+      "title": "New timer \uD83D\uDD52",
+      "tooltip": "Enter the name of the item you want to calculate the remaining time! If it doesn't exist in the listing, you can choose a custom image and time."
+    }
   }
 }

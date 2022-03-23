@@ -48,5 +48,13 @@
       "title": "Estatísticas",
       "tooltip": "Baseado em seus ataques, conseguimos extrair algumas informações e efetuar projeções!"
     }
+  },
+  "ct": {
+    "title": "Temporizador para Consumíveis 🍹",
+    "description": "Você pode usar consumíveis para aumentar suas habilidades. Aqui você pode calcular o tempo de restante deles.",
+    "create": {
+      "title": "Criar novo temporizador \uD83D\uDD52",
+      "tooltip": "Digite o nome do item que você quer calcular o tempo de restante! Caso ele não exista na listagem, você pode escolher uma imagem e tempo customizados."
+    }
   }
 }
