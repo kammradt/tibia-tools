@@ -1,5 +1,5 @@
 <template>
-  <v-speed-dial absolute direction="bottom" right class="mr-12">
+  <v-speed-dial absolute direction="bottom" right>
     <template v-slot:activator>
       <v-btn icon large>
         <v-icon v-text="'mdi-earth'"/>

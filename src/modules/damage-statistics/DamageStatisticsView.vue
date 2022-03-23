@@ -1,16 +1,16 @@
 <template>
   <v-container>
     <v-row align="start" justify="center">
-      <v-col cols="9" sm="8">
+      <v-col lg="9">
         <v-col>
           <v-card outlined>
             <v-card-title>
-              {{$t('ds.log-to-statistics.title')}}
+              {{ $t('ds.log-to-statistics.title') }}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
-                  <v-icon small v-on="on" color="grey" class="pl-2" v-text="'mdi-help-circle'" />
+                  <v-icon class="pl-2" color="grey" small v-on="on" v-text="'mdi-help-circle'"/>
                 </template>
-                <span v-text="$t('ds.log-to-statistics.tooltip')" />
+                <span v-text="$t('ds.log-to-statistics.tooltip')"/>
               </v-tooltip>
             </v-card-title>
             <v-divider />

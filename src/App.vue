@@ -1,20 +1,20 @@
 <template>
   <v-app id="app">
-    <v-main>
+    <v-main class="pt-8">
+      <top-bar/>
+
       <router-view/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-  export default {
-    name: 'App'
-  }
+import TopBar from '@/modules/home/TopBar.vue'
+
+export default {
+  components: {
+    TopBar
+  },
+  name: 'App'
+}
 </script>
-
-
-<style>
-  html {
-    overflow-y: hidden;
-  }
-</style>

@@ -1,19 +1,19 @@
 <template>
   <v-container>
     <v-row align="start" justify="center">
-      <v-col cols="9" sm="8">
+      <v-col lg="9">
         <v-col>
           <v-card outlined>
             <v-card-title>
-              {{$t('cc.value-to-stacks.title')}}
+              {{ $t('cc.value-to-stacks.title') }}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon
-                    small
-                    v-on="on"
-                    color="grey"
-                    class="pl-2"
-                    v-text="'mdi-help-circle'"
+                      class="pl-2"
+                      color="grey"
+                      small
+                      v-on="on"
+                      v-text="'mdi-help-circle'"
                   />
                 </template>
                 <span v-text="$t('cc.value-to-stacks.tooltip')"/>

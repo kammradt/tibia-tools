@@ -1,19 +1,19 @@
 <template>
   <v-container>
     <v-row align="start" justify="center">
-      <v-col cols="9" sm="8">
+      <v-col lg="9">
         <v-col>
           <v-card outlined>
             <v-card-title>
-              {{$t('mr.log-to-statistics.title')}}
+              {{ $t('mr.log-to-statistics.title') }}
               <v-tooltip right>
                 <template v-slot:activator="{ on }">
                   <v-icon
-                    small
-                    v-on="on"
-                    color="grey"
-                    class="pl-2"
-                    v-text="'mdi-help-circle'"
+                      class="pl-2"
+                      color="grey"
+                      small
+                      v-on="on"
+                      v-text="'mdi-help-circle'"
                   />
                 </template>
                 <span v-text="$t('mr.log-to-statistics.tooltip')"/>
@@ -73,41 +73,41 @@
 </template>
 
 <script>
-  import moment from "moment";
-  import ores from '@/assets/ores.json'
-  import ph from './placeholder-helper'
+import moment from "moment";
+import ores from '@/assets/ores.json'
+import ph from './placeholder-helper'
 
-  export default {
-    name: 'MiningStatisticsView',
-    data: () => ({
-      oresInfo: [...ores],
-      log: '',
-      logPlaceholder: ph(),
-      statistics: {}
-    }),
-    methods: {
-      logToStatistics() {
-        this.resetInformation()
-        this.oreListToStatistics(this.filterOres(this.log))
-        this.setQuantityPerHour(this.getMiningDurationInHours(this.log))
-      },
-      resetInformation() {
-        if (this.oresInfo.some(ore => ore.quantity !== 0)) {
-          this.oresInfo = this.oresInfo.map(ore => ({...ore, quantity: 0, perHour: 0}))
-        }
-      },
-      filterOres(logText) {
-        return this.toList(logText)
-            .filter(this.validMiningLog)
-            .map(this.getOreName)
-            .map(this.removeLastCharacter)
-      },
-      toList(text) {
-        return text.split('\n')
-      },
-      validMiningLog(logLine) {
-        const SHOULD_CONTAIN = '[MINING]'
-        return logLine.includes(SHOULD_CONTAIN)
+export default {
+  name: 'MiningStatisticsView',
+  data: () => ({
+    oresInfo: [...ores],
+    log: '',
+    logPlaceholder: ph(),
+    statistics: {}
+  }),
+  methods: {
+    logToStatistics() {
+      this.resetInformation()
+      this.oreListToStatistics(this.filterOres(this.log))
+      this.setQuantityPerHour(this.getMiningDurationInHours(this.log))
+    },
+    resetInformation() {
+      if (this.oresInfo.some(ore => ore.quantity !== 0)) {
+        this.oresInfo = this.oresInfo.map(ore => ({...ore, quantity: 0, perHour: 0}))
+      }
+    },
+    filterOres(logText) {
+      return this.toList(logText)
+          .filter(this.validMiningLog)
+          .map(this.getOreName)
+          .map(this.removeLastCharacter)
+    },
+    toList(text) {
+      return text.split('\n')
+    },
+    validMiningLog(logLine) {
+      const SHOULD_CONTAIN = '[MINING]'
+      return logLine.includes(SHOULD_CONTAIN)
       },
       getOreName(logLine) {
         const SLICE_AT = 'found a'
