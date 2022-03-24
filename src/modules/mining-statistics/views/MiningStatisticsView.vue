@@ -81,7 +81,7 @@ import {placeholder} from "@/modules/mining-statistics/helpers/placeholder-helpe
 export default {
   name: 'MiningStatisticsView',
   data: () => ({
-    oresInfo: [...ores],
+    oresInfo: ores,
     log: '',
     logPlaceholder: placeholder,
     statistics: {}
